@@ -22,7 +22,7 @@ public class DrumKit extends MouseAdapter {
 
 	JLabel drumLabelWithImage;
 	JLabel cymbalLabelWithImage;
-	JLabel memeLabelWithImage;
+	
 
 	public static void main(String[] args) throws Exception {
 		new DrumKit().getGoing();
@@ -52,11 +52,11 @@ public class DrumKit extends MouseAdapter {
 		// drumLabelWithImage = createLabelImage(drumImageString);
 		drumLabelWithImage = createLabelImage(drum);
 		cymbalLabelWithImage = createLabelImage(cymbal);
-		memeLabelWithImage = createLabelImage(meme);
+		
 		// 10. Add the image to the panel
 		panel.add(drumLabelWithImage);
 		panel.add(cymbalLabelWithImage);
-		panel.add(memeLabelWithImage);
+	
 		// 11. Set the layout of the panel to "new GridLayout()"
 		panel.setLayout(new GridLayout());
 		// 12. call the pack() method on the frame
@@ -64,7 +64,7 @@ public class DrumKit extends MouseAdapter {
 		// 13. add a mouse listener to drumLabelWithImage.
 		drumLabelWithImage.addMouseListener(this);
 		cymbalLabelWithImage.addMouseListener(this);
-		memeLabelWithImage.addMouseListener(this);
+		
 	}
 
 	public void mouseClicked(MouseEvent e) {
@@ -85,10 +85,7 @@ public class DrumKit extends MouseAdapter {
 		if (drumClicked.equals(cymbalLabelWithImage)) {
 			playSound("cymbal.wav");
 		}
-		 if (drumClicked.equals(memeLabelWithImage)) {
-			playSound("meme.mp3");
-		}
-	}
+			}
 
 	private JLabel createLabelImage(String fileName) throws MalformedURLException {
 		URL imageURL = getClass().getResource(fileName);
