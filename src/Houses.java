@@ -6,13 +6,8 @@ public class Houses {
 	static Robot rob = new Robot();
 	static int x;
 	static String height = JOptionPane.showInputDialog("Do you want a small, medium, or large building?");
-	static String colorRed = JOptionPane.showInputDialog("What value do you want the red to be?(max 255)");
-	static String colorBlue = JOptionPane.showInputDialog("What value do you want the blue to be?(max 255)");
-	static String colorGreen = JOptionPane.showInputDialog("What value do you want the green to be?(max 255)");
-	static int red = Integer.parseInt(colorRed);
-	static int blue = Integer.parseInt(colorBlue);
-	static int green = Integer.parseInt(colorGreen);
-	static String roofType;
+
+	
 
 	public static void main(String[] args) {
 		rob.setX(100);
@@ -26,9 +21,10 @@ public class Houses {
 		}
 		for (int i = 0; i < 5; i++) {
 DrawHouse house = new DrawHouse();
-house.drawHouse();
-		}
+house.drawHouse(rob, x, height);
 
+		}
+rob.hide();
 	}
 
 }
